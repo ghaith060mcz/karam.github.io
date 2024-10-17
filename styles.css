@@ -6,7 +6,7 @@
     font-family: 'Arial', sans-serif;
 }
 
-/* إعدادات الخلفية مع فقاعات متحركة */
+/* خلفية الفقاعات */
 .bubbles {
     position: absolute;
     top: 0;
@@ -40,7 +40,6 @@
     }
 }
 
-/* تخصيص مواقع الفقاعات */
 .bubbles span:nth-child(1) { left: 10%; animation-delay: 0s; }
 .bubbles span:nth-child(2) { left: 20%; animation-delay: 2s; }
 .bubbles span:nth-child(3) { left: 30%; animation-delay: 4s; }
@@ -52,6 +51,24 @@
 .bubbles span:nth-child(9) { left: 90%; animation-delay: 1s; }
 .bubbles span:nth-child(10) { left: 95%; animation-delay: 9s; }
 
+/* تنسيق "SANDY" مع تأثيرات */
+.animated-title {
+    font-size: 60px;
+    text-align: center;
+    margin-top: 50px;
+    background: linear-gradient(90deg, #ff8a00, #e52e71, #4a00e0);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradient-move 3s infinite;
+    letter-spacing: 5px;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes gradient-move {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
 /* تنسيق الصندوق الرئيسي */
 body {
     display: flex;
@@ -60,7 +77,8 @@ body {
     height: 100vh;
     overflow: hidden;
     padding: 20px;
-    direction: rtl; /* تنسيق من اليمين إلى اليسار */
+    direction: rtl;
+    flex-direction: column;
 }
 
 .container {
@@ -73,13 +91,12 @@ body {
     text-align: center;
 }
 
-h1 {
+h2 {
     margin-bottom: 20px;
     font-size: 24px;
     color: #333;
 }
 
-/* تصميم الروابط */
 .links a {
     display: flex;
     align-items: center;
@@ -95,7 +112,7 @@ h1 {
 }
 
 .links a i {
-    margin-left: 10px; /* مسافة بين الشعار والنص */
+    margin-left: 10px;
     font-size: 24px;
 }
 
@@ -104,19 +121,4 @@ h1 {
     color: white;
     transform: scale(1.05);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* تحسين العرض على الأجهزة المحمولة */
-@media (max-width: 768px) {
-    .container {
-        padding: 20px;
-    }
-
-    h1 {
-        font-size: 20px;
-    }
-
-    .links a {
-        font-size: 16px;
-    }
 }
