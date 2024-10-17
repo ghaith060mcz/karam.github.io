@@ -11,25 +11,25 @@ body {
     background-position: center;
     background-attachment: fixed;
     overflow: hidden;
-    direction: rtl; /* لتنسيق النصوص من اليمين إلى اليسار */
+    direction: rtl; /* لضبط الاتجاه من اليمين إلى اليسار */
 }
 
-/* طبقة غباش تغطي الخلفية بالكامل */
+/* طبقة غباش مخففة */
 .background-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* شفافية طفيفة */
-    backdrop-filter: blur(11px); /* غباش فعال */
-    -webkit-backdrop-filter: blur(11px); /* دعم لـ WebKit */
+    background-color: rgba(0, 0, 0, 0.3); /* شفافية أخف */
+    backdrop-filter: blur(8px); /* غباش أقل */
+    -webkit-backdrop-filter: blur(8px); /* دعم WebKit */
     z-index: -1;
 }
 
 /* صندوق الروابط */
 .container {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.85);
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -87,7 +87,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-direction: row-reverse; /* الأيقونات على اليمين */
+    flex-direction: row-reverse;
     text-decoration: none;
     color: white;
     background-color: rgba(0, 0, 0, 0.7);
@@ -110,18 +110,25 @@ body {
     transform: scale(1.05);
 }
 
-/* أيقونات تنبض بحركة جذابة */
-.tiktok-icon {
-    animation: pulse 2s infinite ease-in-out, rotate 8s infinite linear;
-    transition: transform 0.3s;
+/* تأثير لمعان على الأيقونات */
+.tiktok-icon, .links a img {
+    position: relative;
+    overflow: hidden;
 }
 
-@keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.2); }
+.tiktok-icon::after, .links a img::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%);
+    animation: shineEffect 3s infinite;
 }
 
-@keyframes rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+@keyframes shineEffect {
+    0% { left: -100%; }
+    50% { left: 100%; }
+    100% { left: 200%; }
 }
