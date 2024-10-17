@@ -22,8 +22,8 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4); /* شفافية طفيفة */
-    backdrop-filter: blur(15px); /* غباش فعال */
-    -webkit-backdrop-filter: blur(15px); /* دعم لـ WebKit */
+    backdrop-filter: blur(11px); /* غباش فعال */
+    -webkit-backdrop-filter: blur(11px); /* دعم لـ WebKit */
     z-index: -1;
 }
 
