@@ -1,3 +1,4 @@
+// إضافة تأثير عند التمرير على الروابط
 document.querySelectorAll('.links a').forEach(link => {
     link.addEventListener('mouseover', () => {
         link.style.transform = 'scale(1.1)';
@@ -8,17 +9,15 @@ document.querySelectorAll('.links a').forEach(link => {
     });
 });
 
-const tiktokIcon = document.getElementById('tiktokIcon');
+// تفعيل تأثير اللمعان للأيقونة
+const tiktokIcon = document.querySelector('.tiktok-icon');
 
-// وظيفة لتفعيل وإزالة تأثير اللمعان
 function triggerShineEffect() {
-    tiktokIcon.classList.add('shining'); // أضف الـ class
-
-    // أزل الـ class بعد انتهاء الأنيميشن (1 ثانية)
+    tiktokIcon.classList.add('shining');
     setTimeout(() => {
         tiktokIcon.classList.remove('shining');
     }, 1000);
 }
 
-// تكرار التأثير كل ثانية
+// تكرار التأثير كل 2 ثانية
 setInterval(triggerShineEffect, 2000);
