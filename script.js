@@ -15,7 +15,7 @@ document.querySelectorAll('.links a').forEach(link => {
     });
 });
 
-// تفعيل تأثير النبض للأيقونات بشكل مستمر
+// نبض مستمر للأيقونات مع تأثير دوران
 const tiktokIcon = document.querySelector('.tiktok-icon');
 
 function triggerPulseEffect() {
@@ -25,5 +25,5 @@ function triggerPulseEffect() {
     }, 2000);
 }
 
-// تكرار تأثير النبض
+// تكرار تأثير النبض والدوران كل 4 ثوانٍ
 setInterval(triggerPulseEffect, 4000);
