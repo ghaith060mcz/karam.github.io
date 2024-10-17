@@ -35,7 +35,7 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     width: 90%;
     max-width: 400px;
-    text-align: right; /* جعل النص يظهر على اليمين */
+    text-align: center;
 }
 
 /* فقاعات متحركة */
@@ -98,6 +98,12 @@ body {
     transition: background-color 0.3s, transform 0.2s;
 }
 
+.links a img {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+}
+
 /* تأثير Hover */
 .links a:hover {
     background-color: #007bff;
@@ -105,12 +111,12 @@ body {
 }
 
 /* تأثير لمعان على الأيقونات */
-.tiktok-icon {
+.tiktok-icon, .links a img {
     position: relative;
     overflow: hidden;
 }
 
-.tiktok-icon::after {
+.tiktok-icon::after, .links a img::after {
     content: '';
     position: absolute;
     top: 0;
