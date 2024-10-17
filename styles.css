@@ -110,3 +110,14 @@
     transform: scale(1.05);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
+
+@keyframes shineEffect {
+    0% { filter: brightness(1); transform: scale(1); }
+    50% { filter: brightness(1.8); transform: scale(1.2); }
+    100% { filter: brightness(1); transform: scale(1); }
+}
+
+/* تأثير لمعان عند التفعيل */
+.shining {
+    animation: shineEffect 1s ease-in-out;
+}
