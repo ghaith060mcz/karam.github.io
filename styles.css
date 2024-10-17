@@ -1,4 +1,4 @@
-/* إعداد خلفية الموقع */
+/* إعدادات عامة */
 body {
     height: 100vh;
     margin: 0;
@@ -6,24 +6,33 @@ body {
     align-items: center;
     justify-content: center;
     background-image: url('background.jpg'); /* تعيين الصورة كخلفية */
-    background-size: cover; /* جعل الصورة تغطي كامل الشاشة */
-    background-position: center; /* ضبط الصورة في المنتصف */
-    background-attachment: fixed; /* تثبيت الخلفية عند التمرير */
-    filter: brightness(0.8) blur(2px); /* إضاءة خافتة وتمويه */
+    background-size: cover; /* لجعل الصورة تغطي كامل الخلفية */
+    background-position: center; /* لضبط موضع الصورة في المنتصف */
+    background-attachment: fixed; /* لجعل الخلفية ثابتة عند التمرير */
+    filter: brightness(0.8) blur(2px); /* تحسين الصورة بإضاءة خافتة وتمويه */
+}
+/* صندوق الروابط (Cart) */
+.container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 90%; /* ليكون مناسبًا على جميع الشاشات */
+    width: 400px; /* عرض مناسب */
+    text-align: center;
 }
 
-/* طبقة شفافة فوق الخلفية */
+/* فقاعات الخلفية */
 .bubbles {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* طبقة شفافة داكنة */
-    z-index: -1;
+    background: rgba(0, 0, 0, 0.4); /* طبقة شفافة فوق الصورة */
+    z-index: -1; /* لإرسال الطبقة إلى الخلف */
 }
 
-/* تصميم الفقاعات المتحركة */
 .bubbles span {
     position: absolute;
     display: block;
@@ -40,20 +49,17 @@ body {
     100% { transform: translateY(-1000px); opacity: 0; }
 }
 
+/* تكرار حركة الفقاعات */
 .bubbles span:nth-child(1) { left: 10%; animation-delay: 0s; }
 .bubbles span:nth-child(2) { left: 20%; animation-delay: 2s; }
+/* ... باقي العناصر كما في المثال السابق ... */
 
-/* صندوق المحتوى */
-.container {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
+/* خلفية متحركة لكلمة SANDY */
+.sandy-container {
     text-align: center;
+    margin-top: 80px;
 }
 
-/* العنوان المتحرك */
 .sandy-title {
     font-size: 80px;
     color: white;
@@ -72,13 +78,22 @@ body {
 }
 
 /* تصميم الروابط */
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    text-align: center;
+}
+
 .links a {
     display: flex;
     align-items: center;
     justify-content: right;
     text-decoration: none;
     color: #fff;
-    background-color: rgba(0, 0, 0, 0.7); /* خلفية داكنة شفافة */
+    background-color: rgba(0, 0, 0, 0.7); /* خلفية داكنة مع شفافية */
     padding: 15px;
     margin: 10px 0;
     border-radius: 8px;
@@ -86,15 +101,13 @@ body {
     font-size: 18px;
 }
 
-/* تأثير التمرير على الروابط */
-.links a:hover {
-    background-color: #007bff;
-    color: white;
-    transform: scale(1.05);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+.links a i, .links a img {
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
 }
 
-/* أيقونات متلألئة */
+/* أيقونة TikTok المتحركة */
 .tiktok-icon {
     animation: shine 2s infinite;
     filter: drop-shadow(0 0 5px #fff);
@@ -104,4 +117,23 @@ body {
     0% { filter: brightness(1); transform: scale(1); }
     50% { filter: brightness(1.5); transform: scale(1.1); }
     100% { filter: brightness(1); transform: scale(1); }
+}
+
+/* تأثير عند التمرير */
+.links a:hover {
+    background-color: #007bff;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes shineEffect {
+    0% { filter: brightness(1); transform: scale(1); }
+    50% { filter: brightness(1.8); transform: scale(1.2); }
+    100% { filter: brightness(1); transform: scale(1); }
+}
+
+/* تأثير لمعان عند التفعيل */
+.shining {
+    animation: shineEffect 1s ease-in-out;
 }
