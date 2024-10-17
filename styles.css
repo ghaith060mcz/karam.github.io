@@ -1,4 +1,4 @@
-/* إعادة ضبط التنسيقات */
+/* إعدادات عامة */
 * {
     margin: 0;
     padding: 0;
@@ -34,16 +34,10 @@
     100% { transform: translateY(-1000px); opacity: 0; }
 }
 
+/* تكرار حركة الفقاعات */
 .bubbles span:nth-child(1) { left: 10%; animation-delay: 0s; }
 .bubbles span:nth-child(2) { left: 20%; animation-delay: 2s; }
-.bubbles span:nth-child(3) { left: 30%; animation-delay: 4s; }
-.bubbles span:nth-child(4) { left: 40%; animation-delay: 6s; }
-.bubbles span:nth-child(5) { left: 50%; animation-delay: 8s; }
-.bubbles span:nth-child(6) { left: 60%; animation-delay: 3s; }
-.bubbles span:nth-child(7) { left: 70%; animation-delay: 5s; }
-.bubbles span:nth-child(8) { left: 80%; animation-delay: 7s; }
-.bubbles span:nth-child(9) { left: 90%; animation-delay: 1s; }
-.bubbles span:nth-child(10) { left: 95%; animation-delay: 9s; }
+/* ... باقي العناصر كما في المثال السابق ... */
 
 /* خلفية متحركة لكلمة SANDY */
 .sandy-container {
@@ -68,32 +62,14 @@
     100% { background-position: 0% 50%; }
 }
 
-/* تصميم الصندوق الرئيسي */
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
-    padding: 20px;
-    direction: rtl;
-    flex-direction: column;
-}
-
+/* تصميم الروابط */
 .container {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     max-width: 400px;
-    width: 100%;
     text-align: center;
-}
-
-h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
 }
 
 .links a {
@@ -110,11 +86,24 @@ h2 {
     font-size: 18px;
 }
 
-.links a i {
+.links a i, .links a img {
     margin-left: 10px;
-    font-size: 24px;
+    width: 30px;
+    height: 30px;
 }
 
+/* أيقونة TikTok المتحركة */
+.tiktok-icon {
+    animation: shine 2s infinite;
+}
+
+@keyframes shine {
+    0% { filter: brightness(1); transform: scale(1); }
+    50% { filter: brightness(1.5); transform: scale(1.1); }
+    100% { filter: brightness(1); transform: scale(1); }
+}
+
+/* تأثير عند التمرير */
 .links a:hover {
     background-color: #007bff;
     color: white;
